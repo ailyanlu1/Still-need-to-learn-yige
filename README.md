@@ -2,6 +2,16 @@
 
 -重要程度以100分为满分
 
+## -近期学习指导纲领（重要程度依次下降）
+1. 将SICP看到第三章为止
+2. CLRS的动态规划和NP问题搞定
+3. 廖雪峰的2.7教程看完
+4. Composing program看完
+5. NAND2TETRIS项目写完
+
+
+
+
 ## 1.算法：
  * 1）排序（基础排序）
     *  A. 选择排序(Selection sort)         100
@@ -18,6 +28,8 @@
  *  3）二分搜索（Binary search）
  *  4）位运算（Bit manipulation)          90
  *  5）动态规划(Dynamic programming)      90
+
+
   
 ## 2.数据结构：
  *  1）树(Tree)
@@ -34,3 +46,4 @@
   *    B. Kruskal 算法                     60
  *  4) 队列和栈(Queue & Stack)
   *    A. 最大最小栈 & 队列                100
+
