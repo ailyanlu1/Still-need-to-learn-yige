@@ -2,15 +2,15 @@
 
 重要程度以100分为满分
 
-1.算法：
-  1）排序（基础排序）
-    A. 选择排序(Selection sort)         100
-    B. 插入排序(Insertion sort)         100
-    C. 冒泡排序(Bubble sort)            100
-    D. 归并排序(Merge sort)             100
-    E. 快速排序(Quick sort)             100
-    F. 希尔排序(Shell sort)             100
-    G. 堆排序(Heap sort)                100
+## 1.算法：
+  * 1）排序（基础排序）
+    *  A. 选择排序(Selection sort)         100
+    *  B. 插入排序(Insertion sort)         100
+    *  C. 冒泡排序(Bubble sort)            100
+    *  D. 归并排序(Merge sort)             100
+    *  E. 快速排序(Quick sort)             100
+    *  F. 希尔排序(Shell sort)             100
+    *  G. 堆排序(Heap sort)                100
   2）非比较排序 
     A. 计数排序(Counting sort)          80
     B. 基数排序(Radix sort)             80
