@@ -8,7 +8,7 @@
 3. 廖雪峰的2.7教程看完
 4. Composing program看完
 5. NAND2TETRIS项目写完
-
+6. 造轮子
 
 
 
