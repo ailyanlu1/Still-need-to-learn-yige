@@ -3,7 +3,7 @@
 -重要程度以100分为满分
 
 ## 1.算法：
-  * 1）排序（基础排序）
+ * 1）排序（基础排序）
     *  A. 选择排序(Selection sort)         100
     *  B. 插入排序(Insertion sort)         100
     *  C. 冒泡排序(Bubble sort)            100
