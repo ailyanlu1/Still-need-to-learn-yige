@@ -33,7 +33,7 @@
   
 ## 2.数据结构：
  *  1）树(Tree)
-  *    A. 二分搜索树(Binary search tree)   100
+  *    A. 二分搜索树(Binary search tree)   100      √
   *    B. 堆(Heap)                         100    √
   *    C. 红黑树(Red-black tree)           80
   *    D. B树
