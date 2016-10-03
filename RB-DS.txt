@@ -16,3 +16,111 @@ LF-RT(T, x)
     x.parent.right = y
   y.left = x
   x.parent = y
+
+# 移植代码
+
+RB-TRANSPLANT(T, u, v)
+  if u.parent == T.nil
+    T.root = v
+  elif u.parent.left == u
+    u.parent.left = v
+  else 
+    u.parent.right = v
+  v.parent = u.parent
+  
+# 插入代码
+
+RB-INSERT(T, z)
+  x, y = T.root, T.nil
+  while x != T.nil
+    y = x
+    if x.val < z.val
+      x = x.right
+    else
+      x = x.left
+  
+  z.parent = y
+  
+  if y == T.nil
+    T.root = z
+  elif y.val < z.val
+    y.right = z
+  else
+    y.left = z
+  z.left = T.nil
+  z.right = T.nil
+  z.color = RED
+  RB-INSERT-FIX-UP(T, z)
+  
+# 插入修正函数
+
+RB-INSERT-FIX-UP(T, z)
+  while z.parent.color == RED
+    if z.parent == z.parent.parent.left
+      y = z.parent.parent.right
+      if y.color == RED
+        y.color = BLACK
+        z.parent = BLACK
+        z.parent.parent = RED
+        z = z.parent.parent
+      elif y.color == BLACK
+        if z == z.parent.right
+          z = z.parent
+          LF-RT(T, z)
+        z.parent.color = BLACK
+        z.parent.parent.color = RED
+        RT-RT(T, z.parent.parent)
+    else (The same as if statement, just change left and right for first two lines)
+  T.root.color = BLACK
+  
+# 删除函数
+
+RB-DELETE(T, z)
+  y = z
+  y-ori-color = z.color
+  if z.left == T.nil
+    x = z.right
+    RB-TRANSPLANT(T, z, z.right)
+  elif z.right == T.nil
+    x = z.left
+    RB-TRANSPLANT(T, z, z.left)
+  else
+    y = Tree-min(z.right)
+    y-ori-color = y.color
+    x = y.right
+    if z.right == y
+      x.parent = y
+    else
+      RB-TRANSPLANT(T, y, y.right)
+      y.right = z.right
+      y.right.parent = y
+    RB-TRANSPLANT(T, z, y)
+    y.left = z.left
+    y.left.parent = y
+    y.color = z.color
+  if y-ori-color == BLACK
+    RB-DELETE-FIXUP(T, x)
+    
+# 删除修正函数
+
+RB-DELETE-FIX-UP(T, x)
+  while T.root != x and x.color == BLACK
+    if x.parent.left == x
+      w = x.parent.right
+      if w.color = RED                     # 情况1，当w为红时，w改为黑，x.parent改为红，然后将x.parent左转，这样达到局部平衡，新的w为黑
+        w.color = BLACK                    # 不管x.parent为黑或为红，这两行赋值将x.parent左转似的w成为公共根节点，左子树的黑高就平衡了
+        x.parent.color = RED          
+        LF-RT(T, x.parent)                 
+        w = x.parent.right                 # 由于左转x的兄弟节点发生改变，重新定义w，并且新的w必定为黑，因为x.parent此时为红
+      if w.left.color == BLACK and w.right.color == BLACK      # 情况2，当w两子都为黑时，改变w的颜色使右子树黑高降一
+        w.color = RED                                          # 使右子树黑高降1
+        x = x.parent                                           # 左右子树性质5得到保持，将x点上推继续维护性质5
+      elif w.right.color == BLACK
+        if w.left.color == RED             # 情况3，w右子为黑左子为红时，将左子和w颜色互换再右转w，这样变为情况4
+          w.color = RED                   
+          w.left.color = BLACK
+          RT-RT(T, w)
+          w = x.parent.right               # 右转后的w位置发生改变，需要重新定位
+        w.color = x.parent.color           # 情况4，
+        
+      
