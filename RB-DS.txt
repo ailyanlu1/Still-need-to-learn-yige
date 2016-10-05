@@ -122,5 +122,10 @@ RB-DELETE-FIX-UP(T, x)
           RT-RT(T, w)
           w = x.parent.right               # 右转后的w位置发生改变，需要重新定位
         w.color = x.parent.color           # 情况4，
-        
+        x.parent.color = BLACK
+        w.right.color = BLACK
+        LF-RT(T, x.parent)
+        T.root = x
+    else (change left and right)
+  x.color = BLACK
       
