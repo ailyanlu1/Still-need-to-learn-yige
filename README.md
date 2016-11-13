@@ -29,6 +29,8 @@
  *  3）二分搜索（Binary search）
  *  4）位运算（Bit manipulation)          90
  *  5）动态规划(Dynamic programming)      90
+ *  6）回溯(Back Tracking)     
+ *  7）Union-Find   
 
 
   
